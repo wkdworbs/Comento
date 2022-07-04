@@ -8,24 +8,27 @@
 
 # [git branch 전략]
 한번씩 아래 링크와 진영님이 정리해놓으신 git flow 내용 읽고 작업하기.
-git flow:  https://techblog.woowahan.com/2553/ 
+
+git flow:  https://techblog.woowahan.com/2553/
+
+[Git] branch & git-flow - https://velog.io/@songjy377/Git-Branch
 ### 2. add 후에는 git status시 파일명이 초록색(midified 파일명)으로 변경 됨 => git commit -m "commit message 내용" 진행 ex) git commit -m " ADD: 로그인 페이지 레이아웃 구현 완료"
 
 ## [commit convention]
 
-1. Add: 코드나 테스트를 추가했을 때 <br>
-2. Fix: 버그를 수정했을 때 <br>
+1. feat: 코드나 테스트를 추가했을 때 <br>
+2. fix: 버그를 수정했을 때 <br>
 3. Remove: 코드를 제거했을 때 <br>
-4. Update: 코드보다는 문서나 라이브러리 등을 보완했을 때 <br>
-5. Docs: 문서를 수정했을 때 <br>
-6. Style: 코드 포맷팅에 대한 부분 변경, CSS 변경 등<br>
-7. Rename: 이름을 변경했을 때 <br>
-8. Move: 코드를 이동할 때 <br>
-9. Refac: 코드 리팩토링 <br>
-10. Test: 테스트 코드 수정 <br>
-11. Chore: 그 외 자잘한 수정 <br>
+4. update: 코드보다는 문서나 라이브러리 등을 보완했을 때 <br>
+5. docs: 문서를 수정했을 때 <br>
+6. style: 코드 포맷팅에 대한 부분 변경, CSS 변경 등<br>
+7. rename: 이름을 변경했을 때 <br>
+8. move: 코드를 이동할 때 <br>
+9. refactor: 코드 리팩토링 <br>
+10. test: 테스트 코드 수정 <br>
+11. conf : 환경설정 등
 
-예를 들어, 로그인 기능에 대한 버그를 수정했다면 git commit -m "Fix: Login bug " 이런 식으로 작성해서 팀원들이 어떤 작업을 수행했는지 서로 확인하기 쉽게 commit message를 
+예를 들어, 로그인 기능에 대한 버그를 수정했다면 git commit -m "fix: Login bug " 이런 식으로 작성해서 팀원들이 어떤 작업을 수행했는지 서로 확인하기 쉽게 commit message를 
 일관성 있게 작성해주세요!
 
 ### 3. git log ( git log로 commit 내역 확인 수시로 합시다! )
@@ -36,12 +39,19 @@ git flow:  https://techblog.woowahan.com/2553/
 ## Push 하기 전 검토해야할 사항
 
 - github에 push 한 뒤 conflict 사항을 확인하기 보다 push 하기 전 최신의 main 코드를 merge하여 conflict를 해결한 뒤 push를 하는 것이 현명합니다.
+
 (1) git add, commit
-(2) git checkout main(master)
-(3) git pull origin main(master)
+
+(2) git checkout main
+
+(3) git pull origin main
+
 (4) git checkout feature
-(5) git merge main(master)
+
+(5) git merge main
+
 (6) (컨플릭트 발생 시 해결 후 add, commit)
+
 (7) git push origin feature
 
 conflict 관련 내용 혹시 이해가 되지 않는 부분이 있다면 편하게 물어봐주세요! 그리고 인터넷에 자료도 많으니까 검색하면 아마 해결하실 수 있으실 것 같습니다.
